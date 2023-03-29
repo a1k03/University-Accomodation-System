@@ -1,0 +1,111 @@
+.form {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;   /* Everything within form class is set to these values */
+}
+
+.form * {
+    box-sizing: border-box;
+    line-height: 1.5;  
+
+}
+
+.form__title {
+    font-size: 2em;
+    font-weight: 600;
+
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column; /* Alternative to using <br> to make columns */
+}
+
+.form__item > * {  /* Every direct child of form__item */
+    align-self: start;  /* Makes width of the text to match the content inside the label  */
+}
+
+.form__label {
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.form__input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;  /* Adds a colour animation, useful for JavaScript error message later on */
+}
+
+.form__input:focus {
+    background: white; /*Changes colour of the field to white when clicked on */
+
+}
+
+.form__input::placeholder {
+    color: #bbbbbb;  /* Makes placeholder text (grayed out text) slightly lighter */
+}
+
+.form__input--error {   /* This gives the colour for the error message */
+    color: #d50000;
+    background: #fff8f8;
+    border-color: #d50000;
+}
+
+.form__input--error::placeholder {  /* Styles the placeholder*/
+    color: #ffbfbf;
+}
+
+.form__error {   
+    padding-top: 10px; /* Adds space between error message and input field*/
+    color: #d50000;
+    font-size: 0.9em;
+    visibility: hidden; 
+}
+
+.form__input--error + .form__error {
+    visibility: visible;
+}
+
+.form__input--smaller {
+    max-width: 150px;
+}
+
+.form__btn {
+    font-family: 'Josefin Sans' sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 10px 16px;
+    margin: 10px 0;
+
+    color: white;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+    border-radius: 5px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.37s;
+    outline: none;
+}
+
+.form__btn:active {
+    background: black;
+}
+
+.main {
+    background-color: black;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 120vh;
+    background-color: black;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}

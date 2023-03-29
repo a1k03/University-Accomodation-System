@@ -1,0 +1,73 @@
+<!DOCTYPE html>  <!-- Here I have declared my document type, and below I have used a shortcut to autofill the essentials of my html file for me -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- This is where my chosen font is imported from (Google)-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">    
+</head>
+<body>
+  <!-- Navigation Bar Section -->
+  <nav class="navbar">  <!-- Used the Bootstrap library here to create a navigation bar depending on the screen size -->
+    <div class="navbar__container">  <!-- Acts as a container for my HTML elements, in this case 'navbar__container' means everything contained within the navigation bar -->
+      <a href="/" id="navbar__logo">University Accomodation</a>  <!--  a  href = "/" links back to the home page. The id=navbar__logo acts as a logo for the user (in this case : 'University Accomodation') to click whenever they wish to
+      go back to the home page. I have also called it an id so that I can specifically target this element within my css file, using '#navbar__logo' -->
+      <div class="navbar__toggle" id="mobile-menu">  <!-- Here I have created another class within the 'div' tag called 'navbar__toggle', which will act as the toggle menu on a mobile screen.
+      I have also assingned an id so that I can specifically style this in my styles.css file -->
+        <span class="bar"></span> 
+        <span class="bar"></span>
+        <span class="bar"></span>  <!-- Here I have created three span tags containing the class 'bar'. These will act as the 'bars' seen on the toggle menu, hence why it is
+          nested within the 'div class' above it. I have added the 'bar' class within the span tags so that it can easily be styled and so that it only takes up the amount of
+        width it needs to, as opposed to setting it within another a div class which is a block level element, meaning it would take up the whole width -->
+      </div>
+      <ul class="navbar__menu"> <!-- Unordered list containing the class 'navbar__menu' which acts as the menu in the navigation bar -->
+        <li class="navbar__item"> <!-- List containing the class which has all the items that I can use in my menu, in this case just 'Contact' -->
+          <a href="/" class="navbar__links"> Home </a>
+        </li>
+ 
+      </ul>
+      </div>  
+  </nav>
+
+
+  <!-- Main Section -->
+  <div class="main"> <!-- Defines the main section of my home page -->
+      <div class="main__container"> <!-- Nested within my 'main' class, and acts as a container for the next class 'main__content' in which my h1, h2 and form elements all reside -->
+          <div class="main__content">
+              <h1>ROOMS FOR</h1>
+              <h2>YOU</h2>
+              
+              <form action="showrooms.php" method="POST"> <!-- Links to my showrooms.php page in which all rooms are shown-->
+                <label for="Price">Price</label> <!-- Acts as a label for the filter choice for when the user wants to pick the type of room they want to choose -->
+                <select name="Price" id="Price"> <!-- The name attribute specifies the name for the drop down list I have created above -->
+                  <option value="Over500">Over $500</option> <!-- Defines the options for the user to select -->
+                  <option value="Under500">Under $500</option>
+                </select>
+                <p>Click here to see rooms</p>
+                <input type="hidden" name="showrooms" value="1" /> <!-- THe user's input will not be displayed to the user (it won't display on the screen showing that the user picked that option
+                  , rather it will take the data in and send it to the showrooms.php file)-->
+        
+                <button class="main__btn" type="submit" value="Submit">Show Rooms</button>  <!-- Defines a clickable button, with the class 'main_btn'
+                to allow it to be styled, as well as type and value set to 'submit' so that the data can be sent to the form handler (showrooms.php) -->
+        
+            </form>  <!-- End of the section where the user selects a filter and clicks "Show rooms" or just clicks the button itself -->
+
+
+         
+          </div>  <!-- End of the main content section-->
+          <div class="main__img--container"> <!-- Class containing the image I used in my homepage -->
+              <img src="images/chilling.svg" alt="pic" id="main__img"> <!-- 'img src' sources the image to where it is located, and ' id='main_img' 
+                ' allows me to target the image specifically in my css file -->
+          </div>
+      </div>
+  </div>
+
+
+
+   <script src="app.js"></script>   <!-- Links to my Javascript file -->
+ </body>
+</html>
